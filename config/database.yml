@@ -12,13 +12,13 @@ development:
   port: 5432
   adapter: postgresql
   database: tarot_api_dev
-  username: howlcode
-  password: howlcode
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
 
 test:
   host: localhost
   port: 5432
   adapter: postgresql
   database: tarot_api_test
-  username: howlcode
-  password: howlcode
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
