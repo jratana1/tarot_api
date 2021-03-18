@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  resources :users
+  
+  resources :readings
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   namespace :api do
     namespace :v1 do
       resources :cards
+      resources :users
 
       get 'spreads/random_card' => "spreads#random_card"
       get 'spreads/shuffled' => "spreads#shuffle"
