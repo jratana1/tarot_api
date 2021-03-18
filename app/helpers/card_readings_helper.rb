@@ -1,0 +1,2 @@
+module CardReadingsHelper
+end
