@@ -3,9 +3,13 @@ module Api
     class CardsController < ApplicationController
       before_action :set_card, only: [:show, :update, :destroy]
 
+      # def index
+      #   @cards = Card.all
+      #   render json: @cards
+      # end
       def index
-        @cards = Card.all
-        render json: @cards
+        cards = Card.all
+        render json: CardSerializer.new(cards)
       end
 
       def show
