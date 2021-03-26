@@ -11,7 +11,8 @@ class Api::V1::ReadingsController < ApplicationController
         reading.cards << Card.find(params[:cards][1])
         reading.cards << Card.find(params[:cards][2])
         if reading.save
-            render json: ReadingSerializer.new(reading)
+            readings = User.find(1).readings.last(5)
+            render json: ReadingSerializer.new(readings)
         end
     end
 end
